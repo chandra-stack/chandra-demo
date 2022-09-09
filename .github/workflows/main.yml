@@ -22,8 +22,8 @@ jobs:
           configJson : ${{steps.set_var.outputs.configJson}}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - id: set_var   
-        name: Checkout repo
+      #- id: set_var   
+        #name: Checkout repo
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     
       - uses: actions/checkout@v3
@@ -37,7 +37,9 @@ jobs:
       - run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Extracting json data into workflow   
+        id: set_var  
+      - name: Extracting json data into workflow 
+        
         run: |
           content='cat **/config.json'
           content="${content//'%'/'%25'}"
@@ -47,5 +49,3 @@ jobs:
           
       - name : Printing the json data
         run : echo "Name from JSON :${{steps.set_var.outputs.configJson && fromJson(steps.set_var.outputs.configJson).name}}"
-        
-          
