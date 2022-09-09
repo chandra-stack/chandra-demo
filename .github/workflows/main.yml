@@ -22,27 +22,27 @@ jobs:
           configJson : ${{steps.set_var.outputs.configJson}}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # shell : bash
-      - id: set_var 
-          
+      - id: set_var    
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       # Runs a single command using the runners shell
+      
         name: Run a one-line script
       - run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
         
-      -  name: Run a multi-line script
-         run: |
+      - name: Run a multi-line script
+        run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
       - run: |
           content='cat **/config.json'
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
-          echo "::set-output name=configJson::$content"    
+          echo "::set-output name=configJson::$content"  
+          
         name : Printing the json data
       - run : echo "Name from JSON :${{steps.set_var.outputs.configJson && fromJson(steps.set_var.outputs.configJson).name}}"
         
