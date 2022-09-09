@@ -22,10 +22,11 @@ jobs:
           configJson : ${{steps.set_var.outputs.configJson}}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - id : set_var 
+      - shell : bash
+        id: set_var 
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       # Runs a single command using the runners shell
         name: Run a one-line script
       
