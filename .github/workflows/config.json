@@ -1,3 +1,7 @@
 {
-  "name":"chandra"
+  "name":"chandra",
+  "place":{
+    "name_place":"xyz",
+    "pincode_place":"123"
+}
 }
