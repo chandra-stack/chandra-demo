@@ -1,7 +1,9 @@
-{
-  "name": "chandra",
-  "place": {
-    "name_place": "xyz",
-    "pincode_place": "123"
+[
+  {
+    "name": "abc"
+  },
+  {
+    "place": "abcd",
+    "place_code": "123"
   }
-}
+]
