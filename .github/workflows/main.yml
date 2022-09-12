@@ -46,9 +46,9 @@ jobs:
           
       - name : Printing the json data
         run : echo ${{steps.set_var.outputs.configJson && fromJson(steps.set_var.outputs.configJson).name}}
-        
-      - id: dotenv
-        uses: ./.github/actions/dotenv-action
-        
-        name : printing env data
-      - run : echo ${{ steps.dotenv.outputs.version }}
+      - name : importing json property 
+        uses : notiz-dev/github-action-json-property@release
+        with: 
+          path: '.github/workflows/config.json'
+          prop_path: 'name'
+      - run: echo ${{steps.format_script.outputs.name}} 
