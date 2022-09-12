@@ -43,7 +43,7 @@ jobs:
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
-          echo "Post-conversion dude"
+          echo "Post-conversion"
           echo $content
           
           
