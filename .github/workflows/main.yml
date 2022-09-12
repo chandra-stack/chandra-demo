@@ -45,11 +45,5 @@ jobs:
           echo "::set-output name=configJson::$content"  
           
       - name : Printing the json data
-        run : echo ${{steps.set_var.outputs.configJson && fromJson(steps.set_var.outputs.configJson).name}}
-      - name : importing json property 
-        id : format_script
-        uses : notiz-dev/github-action-json-property@release
-        with: 
-          path: '.github/workflows/config.json'
-          prop_path: 'name'
-      - run: echo ${{steps.format_script.outputs.name}} 
+        run : echo ${{fromJson(steps.set_var.outputs.configJson.name)}}
+
