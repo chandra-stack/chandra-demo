@@ -1,9 +1,7 @@
-[
-  {
-    "name": "abc"
+{
+    "version": "abc"
   },
   {
     "place": "abcd",
     "place_code": "123"
-  }
-]
+}
