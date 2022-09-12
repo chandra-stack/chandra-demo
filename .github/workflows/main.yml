@@ -40,9 +40,9 @@ jobs:
           content= cat .github/workflows/config.json
           echo $content
           echo "coverting this to specific format"
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
+          content=${"content//'%'/'%25'"}
+          content="${"content//$'\n'/'%0A'"}
+          content=${"content//$'\r'/'%0D'"}
           echo "Post-conversion dude"
           echo $content
           
