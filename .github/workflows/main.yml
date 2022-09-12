@@ -39,7 +39,6 @@ jobs:
         run: |
           content= cat .github/workflows/config.json
           echo $content
-          echo ${{fromJson(content).name}}
           echo "coverting this to specific format"
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
