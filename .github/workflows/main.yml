@@ -46,7 +46,6 @@ jobs:
           echo "Post-conversion"
           echo '::set-output name=configJson::${content}' 
           
-          name : Printing the json data
-          
-          run : echo "${{fromJson(steps.set_var.outputs.configJson).name}}"
+      - name : Printing the json data
+        run : echo "${{fromJson(steps.set_var.outputs.configJson).name}}"
 
