@@ -45,6 +45,6 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           echo "Post-conversion"
           echo "::set-output name=configJson::${content}"       
-      - name : Printing the json data
+          name : Printing the json data
         #run : echo "${{fromJson(steps.set_var.outputs.configJson).name}}"
 
