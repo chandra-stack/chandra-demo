@@ -37,7 +37,7 @@ jobs:
       - name: Extracting json data into workflow 
         
         run: |
-          content='cat **/config.json'
+          content= cat **/config.json
           echo $content
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
