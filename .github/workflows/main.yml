@@ -43,7 +43,6 @@ jobs:
           content=content//'%'/'%25'
           content=content//$'\n'/'%0A'
           content=content//$'\r'/'%0D'
-          echo "::set-output name=configJson::$content"
           echo "Post-conversion dude"
           echo $content
           
