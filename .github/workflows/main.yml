@@ -46,3 +46,9 @@ jobs:
           
       - name : Printing the json data
         run : echo ${{steps.set_var.outputs.configJson && fromJson(steps.set_var.outputs.configJson).name}}
+        
+      - id: dotenv
+        uses: ./.github/actions/dotenv-action
+        
+        name : printing env data
+      - run : echo ${{ steps.dotenv.outputs.version }}
