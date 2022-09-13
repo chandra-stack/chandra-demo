@@ -67,7 +67,9 @@ jobs:
       - name: Show bodydetails
         run: | 
           body="${{ steps.body.outputs.value }}"
-          echo "$body"
+          for b in $body; do
+            echo "$b"
+          done
           
   DeploymentJobs:
     runs-on : ubuntu-latest
