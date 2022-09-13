@@ -48,11 +48,16 @@ jobs:
           
       - name : Printing the json data
         run : echo "${{steps.set_var.outputs.configJson && fromJSON(steps.set_var.outputs.configJson).name}}"
+      - name: Extract version from package.json
+        uses: sergeysova/jq-action@v2
+        id: name
+        with:
+          cmd: 'jq .name **/config.json -r'
+          
+      - name: Show my name
+        run: 'echo "version ${{ steps.name.outputs.name }}"'
         
-      - name : get apt version and setup python
-        run : |
-          apt --version
-          python3
+
           
           
           
