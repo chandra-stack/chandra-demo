@@ -63,7 +63,8 @@ jobs:
       - uses: sergeysova/jq-action@v2
         id: body
         with:
-          cmd: 'jq .body .github/workflows/config.json -r'   
+          cmd: 'jq .body .github/workflows/config.json -r' 
+          multiline : true
       - name: Show bodydetails
         run: | 
           body="${{ steps.body.outputs.value }}"
