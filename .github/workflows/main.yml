@@ -55,7 +55,7 @@ jobs:
           cmd: 'jq .name .github/workflows/config.json -r'
           
       - name: Show my name
-        run: 'echo "version ${{ steps.name.outputs.name }}"'
+        run: echo "${{ steps.name.outputs.name }}"
         
 
           
