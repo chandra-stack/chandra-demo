@@ -1,7 +1,5 @@
 {
   "name": "abc",
-  "body": {
-    "place": "abcd",
-    "place_code": "123"
-  }
+  "place": "abcd",
+  "place_code": "123"
 }
