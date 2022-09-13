@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
           configJson : ${{steps.set_var.outputs.configJson}}
+          UserName : ${{steps.username.outputs.value}}
           
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -58,6 +59,7 @@ jobs:
         run: | 
           username="${{ steps.username.outputs.value }}"
           echo "$username"
+          
         
           
   
