@@ -56,7 +56,7 @@ jobs:
           
       - name: Show Name
         run: | 
-          echo '::set-output name=Name1::${steps.Name.outputs.value}'
+          echo '::set-output name=Name1::${{steps.Name.outputs.value}}'
           echo ${{steps.Name.output.Name1}}
         
           
