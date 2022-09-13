@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:        
           UserName : ${{steps.username.outputs.value}}
+          Place : ${{steps.place.outputs.value}}
+          PlaceCode : ${{steps.placecode.outputs.value}}
           
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -59,13 +61,13 @@ jobs:
           
       - name: Extract Place code from config.json
         uses: sergeysova/jq-action@v2
-        id: PlaceCode
+        id: placecode
         with:
           cmd: 'jq .place_code .github/workflows/config.json -r'  
           
       - name: Show Place code
         run: | 
-          userplace_code="${{ steps.PlaceCode.outputs.value }}"
+          userplace_code="${{ steps.placecode.outputs.value }}"
           echo "$userplace_code"
           
   DeploymentJobs:
@@ -73,7 +75,11 @@ jobs:
     needs : build
     steps :
     - name : printing the outputs of job1
-      run : echo "${{needs.build.outputs.UserName}}"
+      run : |
+        echo "${{needs.build.outputs.UserName}}"
+        echo "${{needs.build.outputs.Place}}"
+        echo "${{needs.build.outputs.PlaceCode}}"
+        
           
   
     
