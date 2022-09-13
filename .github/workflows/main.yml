@@ -52,7 +52,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: name
         with:
-          cmd: 'jq .name **/config.json -r'
+          cmd: 'jq .name .github/workflows/config.json -r'
           
       - name: Show my name
         run: 'echo "version ${{ steps.name.outputs.name }}"'
