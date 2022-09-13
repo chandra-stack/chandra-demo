@@ -18,8 +18,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    outputs:
-          configJson : ${{steps.set_var.outputs.configJson}}
+    outputs:        
           UserName : ${{steps.username.outputs.value}}
           
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -35,23 +34,9 @@ jobs:
       - run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-        id: set_var  
-      - name: Extracting json data into workflow 
         
-        run: |
-          content= cat .github/workflows/config.json
-          echo $content
-          echo "coverting this to specific format"
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          echo "Post-conversion"
-          echo '::set-output name=configJson::${content}' 
-          
-      - name : Printing the json data
-        run : echo "${{steps.set_var.outputs.configJson && fromJSON(steps.set_var.outputs.configJson).name}}"
-      - name: Extract Name from config.json
-        uses: sergeysova/jq-action@v2
+        name: Extract Name from config.json
+      - uses: sergeysova/jq-action@v2
         id: username
         with:
           cmd: 'jq .name .github/workflows/config.json -r'   
