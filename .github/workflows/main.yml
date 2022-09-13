@@ -58,6 +58,7 @@ jobs:
         run: | 
           names="${{ steps.Name.outputs.value }}"
           echo '::set-output name=nameoutput::${names}'
+          echo "${{steps.Name.output.namesoutput}}"
 
         
           
