@@ -52,7 +52,7 @@ jobs:
       - name : get apt version and setup python
         run : |
           apt --version
-          python3
+          python3 .github/workflows/config.py
           
 
 
