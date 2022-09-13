@@ -56,7 +56,7 @@ jobs:
       - name: Show my name
         run: | 
           url=${{ steps.name.outputs.value}}
-          echo url
+          echo ${{url}}
         
         
 
