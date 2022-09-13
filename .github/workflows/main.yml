@@ -49,7 +49,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: place
         with:
-          cmd: 'jq .name .github/workflows/config.json -r'   
+          cmd: 'jq .place .github/workflows/config.json -r'   
       - name: Show Place
         run: | 
           userplace="${{ steps.place.outputs.value }}"
