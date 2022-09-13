@@ -48,4 +48,8 @@ jobs:
           
       - name : Printing the json data
         run : echo "${{steps.set_var.outputs.configJson && fromJSON(steps.set_var.outputs.configJson).name}}"
+        
+      - name : get apt version
+        run : |
+          echo apt --version
 
