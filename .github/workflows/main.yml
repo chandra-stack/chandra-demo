@@ -46,7 +46,7 @@ jobs:
           echo "$username"
           
       - name: Extract Place from config.json
-      - uses: sergeysova/jq-action@v2
+        uses: sergeysova/jq-action@v2
         id: place
         with:
           cmd: 'jq .name .github/workflows/config.json -r'   
