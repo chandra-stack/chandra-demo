@@ -59,19 +59,7 @@ jobs:
         run: | 
           username="${{ steps.username.outputs.value }}"
           echo "$username"
-        
-      - uses: sergeysova/jq-action@v2
-        id: body
-        with:
-          cmd: 'jq .body .github/workflows/config.json -r' 
-          multiline : true
-      - name: Show bodydetails
-        run: | 
-          body="${{ steps.body.outputs.value }}"
-          for b in $body; do
-            echo "$b"
-          done
-          
+                
   DeploymentJobs:
     runs-on : ubuntu-latest
     needs : build
