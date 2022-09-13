@@ -5,3 +5,4 @@ parser=json.load(f)
 print('BUILD-URL :',parser['name'])
 print('BUILD-BODY :',parser['body'])
 f.close()
+
