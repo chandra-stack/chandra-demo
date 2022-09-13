@@ -56,7 +56,8 @@ jobs:
           cmd: 'jq .name .github/workflows/config.json -r'   
       - name: Show username
         run: | 
-          username= "${{ steps.username.outputs.value }}"
+          username="${{ steps.username.outputs.value }}"
+          echo "$username"
         
           
   
