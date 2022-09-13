@@ -53,11 +53,11 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: username
         with:
-          cmd: 'jq .name .github/workflows/config.json -r'
-          
+          cmd: 'jq .name .github/workflows/config.json -r'   
       - name: Show username
         run: | 
-          echo "${{ steps.username.outputs.value }}"
+          username= "${{ steps.username.outputs.value }}"
+        
           
   
     
