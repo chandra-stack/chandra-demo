@@ -48,14 +48,16 @@ jobs:
           
       - name : Printing the json data
         run : echo "${{steps.set_var.outputs.configJson && fromJSON(steps.set_var.outputs.configJson).name}}"
-      - name: Extract version from package.json
+      - name: Extract url from config.json
         uses: sergeysova/jq-action@v2
-        id: name
+        id: url
         with:
-          cmd: 'jq .name .github/workflows/config.json -r'
-          
+          cmd: 'jq .name .github/workflows/config.json -r'          
       - name: Show my name
-        run: echo "${{ steps.name.outputs.value}}"
+        run: | 
+          url=${{ steps.name.outputs.value}}
+          echo url
+        
         
 
           
