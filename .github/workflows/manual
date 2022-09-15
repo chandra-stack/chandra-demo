@@ -1,0 +1,14 @@
+name : input validations
+on :
+  workflow_dispatch :
+    inputs:
+      logLevel:
+      description: 'Log level'
+      required: true
+jobs:
+  print-tag:
+    runs-on: ubuntu-latest
+    if:  ${{ inputs.loglevel }} 
+    steps:
+      - name: Print the input tag to STDOUT
+        run: echo  The tags are ${{ inputs.loglevel }} 
