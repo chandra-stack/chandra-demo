@@ -3,8 +3,8 @@ on :
   workflow_dispatch :
     inputs:
       logLevel:
-      description: 'Log level'
-      required: true
+        description: "Log level"
+        required : True
 jobs:
   print-tag:
     runs-on: ubuntu-latest
