@@ -11,6 +11,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs :
+      code :
+        description: 'Build code'
+        required : True
+      
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -71,6 +76,7 @@ jobs:
         echo "${{needs.build.outputs.UserName}}"
         echo "${{needs.build.outputs.Place}}"
         echo "${{needs.build.outputs.PlaceCode}}"
+        echo "${{inputs.code}}"
         
           
   
