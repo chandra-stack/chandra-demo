@@ -5,6 +5,10 @@ on :
       logLevel:
         description: "Log level"
         required : True
+      isCMDeployRequried:
+        type: boolean
+        description: "true or false"
+        required : True
 jobs:
   print-tag:
     runs-on: ubuntu-latest
