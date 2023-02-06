@@ -6,9 +6,9 @@ on :
         description: "Log level"
         required : True
         
-      iscmdeployrequried:
+      CMValue:
         type: boolean
-        description: "true or false"
+        description: "is CM Server deploy requried?,do select if required"
         required : True
 jobs:
   print-tag:
