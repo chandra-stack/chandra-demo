@@ -5,11 +5,11 @@ on :
       CMValue:
         type: boolean
         description: "is CM Server deploy requried?,select checkobx if required"
-      
+        default: true
       CDValue:
         type: boolean
         description: "is CD Server deploy requried?,select checkobx if required"
-        
+        default: false
 jobs:
   print-tag:
     runs-on: ubuntu-latest
