@@ -1,20 +1,15 @@
 name : input validations
 on :
   workflow_dispatch :
-    inputs:
-      logLevel:
-        description: "Log level"
-        required : True
-        
+    inputs:      
       CMValue:
         type: boolean
         description: "is CM Server deploy requried?,do select if required"
-        required : True
       
       CDValue:
         type: boolean
         description: "is CD Server deploy requried?,do select if required"
-        required : True
+        
 jobs:
   print-tag:
     runs-on: ubuntu-latest
