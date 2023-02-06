@@ -4,11 +4,11 @@ on :
     inputs:      
       CMValue:
         type: boolean
-        description: "is CM Server deploy requried?,do select if required"
+        description: "is CM Server deploy requried?,select checkobx if required"
       
       CDValue:
         type: boolean
-        description: "is CD Server deploy requried?,do select if required"
+        description: "is CD Server deploy requried?,select checkobx if required"
         
 jobs:
   print-tag:
@@ -16,4 +16,19 @@ jobs:
     if:  ${{ inputs.loglevel }} 
     steps:
       - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ inputs.loglevel }} 
+        run: echo  The tags are ${{ inputs.loglevel }}
+        
+  print-tag-CM:
+    if: ${{ github.event.inputs.CMValue == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print the input tag to STDOUT
+      run: echo  The tags are ${{ inputs.loglevel }}
+        
+  print-tag-CD:
+    if: ${{ github.event.inputs.CDValue == 'true' }}
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Print the input tag to STDOUT
+        run: echo  The tags are ${{ inputs.loglevel }}
+    
