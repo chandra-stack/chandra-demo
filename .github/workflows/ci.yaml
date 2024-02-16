@@ -9,7 +9,7 @@ on:
 jobs:
   myJob:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.myInput != "" }}
+    if: ${{ github.event.inputs.myInput != '' }}
     steps:
     - name: Print inputs
       run: |
