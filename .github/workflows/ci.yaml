@@ -1,0 +1,16 @@
+name: Testing ID
+on:
+  workflow_dispatch:
+    inputs:
+      myInput:
+        description: An input string
+        type: string
+
+jobs:
+  myJob:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print inputs
+      run: |
+        echo ${{ inputs.myInput }}
+    
