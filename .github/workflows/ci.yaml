@@ -9,6 +9,7 @@ on:
 jobs:
   myJob:
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.myInput != None }}
     steps:
     - name: Print inputs
       run: |
