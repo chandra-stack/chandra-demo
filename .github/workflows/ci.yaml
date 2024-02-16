@@ -5,6 +5,7 @@ on:
       myInput:
         description: An input string
         type: string
+        required: true
 
 jobs:
   myJob:
