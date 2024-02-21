@@ -2,7 +2,24 @@ name: Testing ID
 on:
   workflow_dispatch:
     inputs:
-      myInput:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      myInput1:
+        description: An input string
+        type: string
+        required: true
+      myInput2:
+        description: An input string
+        type: string
+        required: true
+      myInput3:
         description: An input string
         type: string
         required: true
