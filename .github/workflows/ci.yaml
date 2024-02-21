@@ -31,5 +31,5 @@ jobs:
     steps:
     - name: Print inputs
       run: |
-        echo ${{ inputs.myInput }}
+        echo ${{ inputs.myInput1 }}
     
