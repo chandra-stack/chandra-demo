@@ -2,28 +2,22 @@ name: Testing ID
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
+      Deploy-to:
+        type: environment
+        description: Select the environment
         required: true
-        default: 'warning'
-        type: choice
-        options:
-          - info
-          - warning
-          - debug
-      myInput1:
-        description: An input string
+      BuildID1:
+        description: "Please Enter the  Build Number to be deployed"
+        type: string
+        required: true 
+      BuildID2:
+        description: "Please Enter the  Build Number to be deployed"
+        type: string
+        required: true	  
+      BuildID3:
+        description: "Please Enter the  Build Number to be deployed"
         type: string
         required: true
-      myInput2:
-        description: An input string
-        type: string
-        required: true
-      myInput3:
-        description: An input string
-        type: string
-        required: true
-
 jobs:
   myJob:
     runs-on: ubuntu-latest
