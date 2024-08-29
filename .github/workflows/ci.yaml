@@ -7,17 +7,13 @@ on:
         description: Select the environment
         required: true
       BuildID1:
-        description: "Please Enter the  Build Number to be deployed"
-        type: string
-        required: true 
-      BuildID2:
-        description: "Please Enter the  Build Number to be deployed"
-        type: string
-        required: true	  
-      BuildID3:
-        description: "Please Enter the  Build Number to be deployed"
-        type: string
-        required: true
+        description: "Please Select the Build to be deployed"
+        type: choice
+        options:
+        - build1
+        - build2
+        - build3
+
 jobs:
   myJob:
     runs-on: ubuntu-latest
